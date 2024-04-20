@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="minionResource" load_steps=3 format=3 uid="uid://c5jatiblv0jd8"]
+
+[ext_resource type="Script" path="res://Resources/MinionResourceBase.gd" id="1_yeq32"]
+[ext_resource type="Texture2D" uid="uid://55d3tjfxyg6o" path="res://src/magick_ball.png" id="2_gh07s"]
+
+[resource]
+script = ExtResource("1_yeq32")
+texture = ExtResource("2_gh07s")
+health = 30

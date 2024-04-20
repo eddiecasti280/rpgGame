@@ -31,6 +31,7 @@ func _physics_process(delta):
 
 func _on_interact_area_body_entered(body):
 	body.get_parent().display_message()
+	
 
 func _on_interact_area_body_exited(body):
 	body.get_parent().hide_message()

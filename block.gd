@@ -23,4 +23,3 @@ func hide_message():
 
 func get_hurt():
 	progress_bar.value -= 10
-	hurt.play()

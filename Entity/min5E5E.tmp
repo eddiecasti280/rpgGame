@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgoqfch7fexlt"]
+[gd_scene load_steps=9 format=3 uid="uid://bgoqfch7fexlt"]
 
 [ext_resource type="Texture2D" uid="uid://55d3tjfxyg6o" path="res://src/magick_ball.png" id="1_bl3h3"]
 [ext_resource type="Shader" path="res://minion.gdshader" id="1_bsr0q"]
@@ -6,13 +6,13 @@
 [ext_resource type="Script" path="res://Resources/MinionResourceBase.gd" id="2_m51ia"]
 [ext_resource type="Texture2D" uid="uid://cja60ssombmhe" path="res://src/shadow.png" id="3_ocx6o"]
 [ext_resource type="Script" path="res://Entity/minion_shadow.gd" id="4_l13dj"]
-[ext_resource type="AudioStream" uid="uid://brwvdhjad2n6l" path="res://src/voice_lines/Damon Edwards-i_have_been_chosen_.wav" id="6_o6n3g"]
 
 [sub_resource type="Resource" id="Resource_vrd8k"]
 script = ExtResource("2_m51ia")
 name = "Arcane Ball"
 texture = ExtResource("1_bl3h3")
 health = 30
+summoning_sound = ""
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i47sq"]
 shader = ExtResource("1_bsr0q")
@@ -29,6 +29,3 @@ texture = ExtResource("1_bl3h3")
 position = Vector2(0, 8)
 texture = ExtResource("3_ocx6o")
 script = ExtResource("4_l13dj")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_o6n3g")

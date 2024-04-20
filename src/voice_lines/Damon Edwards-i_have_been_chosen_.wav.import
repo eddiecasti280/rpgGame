@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://brwvdhjad2n6l"
+path="res://.godot/imported/Damon Edwards-i_have_been_chosen_.wav-c7988af6678338dec66a0ab1d3b8b637.sample"
+
+[deps]
+
+source_file="res://src/voice_lines/Damon Edwards-i_have_been_chosen_.wav"
+dest_files=["res://.godot/imported/Damon Edwards-i_have_been_chosen_.wav-c7988af6678338dec66a0ab1d3b8b637.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

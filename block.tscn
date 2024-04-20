@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://block.gd" id="1_2ulj5"]
 [ext_resource type="Texture2D" uid="uid://c47w48ulae22p" path="res://src/block.png" id="1_xnrbk"]
-[ext_resource type="AudioStream" uid="uid://dvboyyb0kbrhy" path="res://src/OOF.mp3" id="3_xsm81"]
+[ext_resource type="AudioStream" uid="uid://brwvdhjad2n6l" path="res://src/voice_lines/Damon Edwards-i_have_been_chosen_.wav" id="3_8t3bj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxe4h"]
 
@@ -38,4 +38,4 @@ rounded = true
 fill_mode = 1
 
 [node name="hurt" type="AudioStreamPlayer" parent="ProgressBar"]
-stream = ExtResource("3_xsm81")
+stream = ExtResource("3_8t3bj")

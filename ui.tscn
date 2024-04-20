@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://Button.gd" id="3_k0snm"]
 
 [sub_resource type="SystemFont" id="SystemFont_batxv"]
+subpixel_positioning = 0
 
 [sub_resource type="Theme" id="Theme_7en6y"]
 default_font = SubResource("SystemFont_batxv")
