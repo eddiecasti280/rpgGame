@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://bgoqfch7fexlt"]
+
+[ext_resource type="Texture2D" uid="uid://55d3tjfxyg6o" path="res://src/magick_ball.png" id="1_bl3h3"]
+[ext_resource type="Shader" path="res://minion.gdshader" id="1_bsr0q"]
+[ext_resource type="Texture2D" uid="uid://cja60ssombmhe" path="res://src/shadow.png" id="3_ocx6o"]
+[ext_resource type="Script" path="res://Entity/minion_shadow.gd" id="4_l13dj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i47sq"]
+shader = ExtResource("1_bsr0q")
+
+[node name="Minion" type="Node2D"]
+
+[node name="minion" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_i47sq")
+texture = ExtResource("1_bl3h3")
+
+[node name="minion_shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+texture = ExtResource("3_ocx6o")
+script = ExtResource("4_l13dj")

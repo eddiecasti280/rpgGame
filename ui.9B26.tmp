@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://fwnh425bsiye"]
+
+[ext_resource type="Texture2D" uid="uid://c2wdgs84uciam" path="res://src/selector.png" id="1_4ljo3"]
+[ext_resource type="Script" path="res://ui.gd" id="1_k507l"]
+[ext_resource type="Texture2D" uid="uid://6ia3vefro8lf" path="res://src/sword.png" id="3_j81pf"]
+[ext_resource type="Script" path="res://Button.gd" id="3_k0snm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmwjx"]
+atlas = ExtResource("1_4ljo3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itykm"]
+atlas = ExtResource("1_4ljo3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qf0u"]
+atlas = ExtResource("1_4ljo3")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dbf2t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmwjx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itykm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qf0u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_right = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k507l")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 112.0
+offset_bottom = 48.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_dbf2t")
+frame_progress = 0.885332
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 112.0
+offset_bottom = 48.0
+tooltip_text = "here"
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Melee"
+icon = ExtResource("3_j81pf")
+script = ExtResource("3_k0snm")
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Magic"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Defend"
+
+[node name="Button4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Switch"

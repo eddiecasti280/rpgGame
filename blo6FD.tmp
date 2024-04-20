@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://crlgqoun6d4hb"]
+
+[ext_resource type="Script" path="res://block.gd" id="1_2ulj5"]
+[ext_resource type="Texture2D" uid="uid://c47w48ulae22p" path="res://src/block.png" id="1_xnrbk"]
+[ext_resource type="AudioStream" uid="uid://dvboyyb0kbrhy" path="res://src/OOF.mp3" id="3_xsm81"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxe4h"]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(10, 10)
+script = ExtResource("1_2ulj5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xnrbk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(0.78, 0.78)
+shape = SubResource("RectangleShape2D_rxe4h")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "hey"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 9.9
+offset_top = -14.2
+offset_right = 13.9
+offset_bottom = 12.8
+scale = Vector2(0.245, 0.245)
+value = 100.0
+rounded = true
+fill_mode = 1
+
+[node name="hurt" type="AudioStreamPlayer" parent="ProgressBar"]
+stream = ExtResource("3_xsm81")

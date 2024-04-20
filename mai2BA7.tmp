@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://csxurygucgexi"]
+
+[ext_resource type="PackedScene" uid="uid://6v7t0h5a0e2r" path="res://space.tscn" id="1_6ydgj"]
+[ext_resource type="PackedScene" uid="uid://cgvpxqbnx0fqy" path="res://character_body_2d.tscn" id="1_svuwa"]
+[ext_resource type="Texture2D" uid="uid://rlk2xmloa80g" path="res://src/training_room.png" id="1_y85ek"]
+[ext_resource type="PackedScene" uid="uid://bgoqfch7fexlt" path="res://minion.tscn" id="3_ldqrf"]
+[ext_resource type="PackedScene" uid="uid://dnbtut5dejsun" path="res://stage.tscn" id="4_j6pdy"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dcy6p"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(600, 384)
+scale = Vector2(2.8, 2.8)
+
+[node name="Node2D2" parent="." instance=ExtResource("1_6ydgj")]
+position = Vector2(-8.57142, -62.8571)
+scale = Vector2(5, 5)
+
+[node name="Node2D" parent="." instance=ExtResource("4_j6pdy")]
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.8, 2.8)
+texture = ExtResource("1_y85ek")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_svuwa")]
+position = Vector2(-71.4285, -5.71429)
+scale = Vector2(1, 1)
+
+[node name="Minion" parent="." instance=ExtResource("3_ldqrf")]
+position = Vector2(-28.5714, -14.2857)
+scale = Vector2(1, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+texture = SubResource("PlaceholderTexture2D_dcy6p")

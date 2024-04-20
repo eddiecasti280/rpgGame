@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnbtut5dejsun"]
+
+[ext_resource type="Shader" path="res://stage.gdshader" id="1_hc0sq"]
+[ext_resource type="Texture2D" uid="uid://rlk2xmloa80g" path="res://src/training_room.png" id="1_kh6l0"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_olc4o"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_noyf1"]
+noise = SubResource("FastNoiseLite_olc4o")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tweab"]
+resource_local_to_scene = true
+shader = ExtResource("1_hc0sq")
+shader_parameter/distortionTexture = SubResource("NoiseTexture2D_noyf1")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_tweab")
+scale = Vector2(2.8, 2.8)
+texture = ExtResource("1_kh6l0")

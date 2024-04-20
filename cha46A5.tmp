@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgvpxqbnx0fqy"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_r2aj1"]
+[ext_resource type="Texture2D" uid="uid://cja60ssombmhe" path="res://src/shadow.png" id="2_crkk5"]
+[ext_resource type="Texture2D" uid="uid://dt8uu6810rg4k" path="res://src/resized_jester.png" id="2_t4yam"]
+[ext_resource type="Shader" path="res://character_body_2d.gdshader" id="3_ayhia"]
+[ext_resource type="Script" path="res://shadow.gd" id="3_vdam5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cow1w"]
+resource_local_to_scene = true
+shader = ExtResource("3_ayhia")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d4ou1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_63hyx"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(7, 7)
+script = ExtResource("1_r2aj1")
+
+[node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 22.8571)
+scale = Vector2(2, 2)
+texture = ExtResource("2_crkk5")
+script = ExtResource("3_vdam5")
+
+[node name="jester" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_cow1w")
+texture = ExtResource("2_t4yam")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+scale = Vector2(0.7, 0.7)
+shape = SubResource("CapsuleShape2D_d4ou1")
+
+[node name="interact_area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="interact_collision_shape" type="CollisionShape2D" parent="interact_area"]
+visible = false
+shape = SubResource("CircleShape2D_63hyx")
+
+[connection signal="body_entered" from="interact_area" to="." method="_on_interact_area_body_entered"]
+[connection signal="body_exited" from="interact_area" to="." method="_on_interact_area_body_exited"]
