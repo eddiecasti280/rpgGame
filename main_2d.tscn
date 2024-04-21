@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://csxurygucgexi"]
+[gd_scene load_steps=9 format=3 uid="uid://csxurygucgexi"]
 
 [ext_resource type="PackedScene" uid="uid://6v7t0h5a0e2r" path="res://space.tscn" id="1_6ydgj"]
 [ext_resource type="PackedScene" uid="uid://cgvpxqbnx0fqy" path="res://character_body_2d.tscn" id="1_svuwa"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bgoqfch7fexlt" path="res://Entity/minion.tscn" id="3_ldqrf"]
 [ext_resource type="PackedScene" uid="uid://dnbtut5dejsun" path="res://stage.tscn" id="4_j6pdy"]
 [ext_resource type="PackedScene" uid="uid://fwnh425bsiye" path="res://ui.tscn" id="6_voqx0"]
+[ext_resource type="PackedScene" uid="uid://cb4cjjnwhw1q8" path="res://duck.tscn" id="7_vvgah"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dcy6p"]
 
@@ -39,3 +40,6 @@ offset_left = 57.1428
 offset_top = -31.4286
 offset_right = 57.1428
 offset_bottom = -31.4286
+
+[node name="Duck" parent="." instance=ExtResource("7_vvgah")]
+position = Vector2(-48.2143, 33.5714)

@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://cb4cjjnwhw1q8"]
+
+[ext_resource type="Script" path="res://Entity/Duck.gd" id="1_m8o74"]
+[ext_resource type="Script" path="res://Resources/MinionResourceBase.gd" id="2_4ku8y"]
+[ext_resource type="Texture2D" uid="uid://bcwfyavbg63hx" path="res://src/duck.png" id="3_m25bi"]
+[ext_resource type="Script" path="res://duck_shadow.gd" id="4_7hu5l"]
+[ext_resource type="Texture2D" uid="uid://cja60ssombmhe" path="res://src/shadow.png" id="4_7nyev"]
+
+[sub_resource type="Resource" id="Resource_gbs63"]
+script = ExtResource("2_4ku8y")
+name = "Duck"
+texture = ExtResource("3_m25bi")
+health = 52
+
+[node name="Duck" type="Node2D"]
+script = ExtResource("1_m8o74")
+minion_res = SubResource("Resource_gbs63")
+
+[node name="duck" type="Sprite2D" parent="."]
+texture = ExtResource("3_m25bi")
+
+[node name="duck_shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+texture = ExtResource("4_7nyev")
+script = ExtResource("4_7hu5l")
