@@ -63,6 +63,13 @@ void fragment() {
 		COLOR.rgb = inside ? mix(COLOR.rgb, color.rgb, color.a) : color.rgb;
 		COLOR.a += (1.0 - COLOR.a) * color.a;
 	}
+	
+	
+	
+	
+	
+	
+	
 }
 
 //void vertex() {

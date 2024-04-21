@@ -1,0 +1,22 @@
+Gameplay premise: Control a character with minions (controllable by AI) that are able to modify the player's attacks. 
+Controls: WASD with mouse movement (scroll menu)
+
+
+The corresponding type of spell can influence shader
+
+Burn:
+https://godotshaders.com/shader/2d-dissolve-with-burn-edge/
+
+Wash:
+https://godotshaders.com/shader/vortex-overlay/
+
+Shock:
+https://godotshaders.com/shader/vcr-analog-distortions/
+
+Basic:
+https://godotshaders.com/shader/pixel-explosion/
+
+
+Water reflections, https://godotshaders.com/shader/2d-water-with-reflections/
+
+Motion blur: https://godotshaders.com/shader/2d-motion-blur/

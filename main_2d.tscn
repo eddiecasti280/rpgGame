@@ -14,13 +14,14 @@
 position = Vector2(600, 384)
 scale = Vector2(2.8, 2.8)
 
-[node name="Node2D2" parent="." instance=ExtResource("1_6ydgj")]
+[node name="space" parent="." instance=ExtResource("1_6ydgj")]
 position = Vector2(-8.57142, -62.8571)
 scale = Vector2(5, 5)
 
-[node name="Node2D" parent="." instance=ExtResource("4_j6pdy")]
+[node name="room" parent="." instance=ExtResource("4_j6pdy")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(2.8, 2.8)
 texture = ExtResource("1_y85ek")
 
