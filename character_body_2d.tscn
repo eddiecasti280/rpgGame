@@ -3,12 +3,18 @@
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_r2aj1"]
 [ext_resource type="Texture2D" uid="uid://cja60ssombmhe" path="res://src/shadow.png" id="2_crkk5"]
 [ext_resource type="Texture2D" uid="uid://dt8uu6810rg4k" path="res://src/resized_jester.png" id="2_t4yam"]
-[ext_resource type="Shader" path="res://character_body_2d.gdshader" id="3_ayhia"]
 [ext_resource type="Script" path="res://shadow.gd" id="3_vdam5"]
+[ext_resource type="Shader" path="res://floating.gdshader" id="4_5cnc1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cow1w"]
 resource_local_to_scene = true
-shader = ExtResource("3_ayhia")
+shader = ExtResource("4_5cnc1")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d4ou1"]
 

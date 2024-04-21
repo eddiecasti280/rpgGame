@@ -36,3 +36,4 @@ func _on_interact_area_body_entered(body):
 func _on_interact_area_body_exited(body):
 	body.get_parent().hide_message()
 
+
