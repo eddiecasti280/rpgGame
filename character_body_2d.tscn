@@ -16,11 +16,12 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/number_of_images = Vector2(1, 1)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d4ou1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtbbw"]
+size = Vector2(20, 29.5918)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_63hyx"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="playable_char" type="CharacterBody2D"]
 scale = Vector2(7, 7)
 script = ExtResource("1_r2aj1")
 
@@ -36,16 +37,18 @@ texture = ExtResource("2_t4yam")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+position = Vector2(0, 3.35714)
 scale = Vector2(0.7, 0.7)
-shape = SubResource("CapsuleShape2D_d4ou1")
+shape = SubResource("RectangleShape2D_jtbbw")
+one_way_collision = true
 
 [node name="interact_area" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 2
+priority = 1
 
 [node name="interact_collision_shape" type="CollisionShape2D" parent="interact_area"]
-visible = false
 shape = SubResource("CircleShape2D_63hyx")
 
 [connection signal="body_entered" from="interact_area" to="." method="_on_interact_area_body_entered"]

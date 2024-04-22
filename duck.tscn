@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cb4cjjnwhw1q8"]
+[gd_scene load_steps=9 format=3 uid="uid://cb4cjjnwhw1q8"]
 
 [ext_resource type="Script" path="res://Entity/Duck.gd" id="1_m8o74"]
 [ext_resource type="Script" path="res://Resources/MinionResourceBase.gd" id="2_4ku8y"]
 [ext_resource type="Texture2D" uid="uid://bcwfyavbg63hx" path="res://src/duck.png" id="3_m25bi"]
 [ext_resource type="Script" path="res://duck_shadow.gd" id="4_7hu5l"]
 [ext_resource type="Texture2D" uid="uid://cja60ssombmhe" path="res://src/shadow.png" id="4_7nyev"]
+[ext_resource type="Shader" path="res://paper.gdshader" id="4_ygx02"]
 
 [sub_resource type="Resource" id="Resource_gbs63"]
 script = ExtResource("2_4ku8y")
@@ -12,11 +13,21 @@ name = "Duck"
 texture = ExtResource("3_m25bi")
 health = 52
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_20jb6"]
+shader = ExtResource("4_ygx02")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
 [node name="Duck" type="Node2D"]
 script = ExtResource("1_m8o74")
 minion_res = SubResource("Resource_gbs63")
 
 [node name="duck" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_20jb6")
 texture = ExtResource("3_m25bi")
 
 [node name="duck_shadow" type="Sprite2D" parent="."]

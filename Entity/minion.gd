@@ -14,7 +14,7 @@ func _ready():
 	show()
 	await get_tree().create_timer(0.5).timeout
 	#minion_res.summoning_sound.play()
-	audio_stream_player.play()
+	#audio_stream_player.play()
 	
 	# test health bar
 	await get_tree().create_timer(0.5).timeout

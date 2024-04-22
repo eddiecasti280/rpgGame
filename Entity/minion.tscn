@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://bgoqfch7fexlt"]
 
 [ext_resource type="Texture2D" uid="uid://55d3tjfxyg6o" path="res://src/magick_ball.png" id="1_bl3h3"]
-[ext_resource type="Shader" path="res://minion.gdshader" id="1_bsr0q"]
 [ext_resource type="Script" path="res://Entity/minion.gd" id="1_djftq"]
 [ext_resource type="Script" path="res://Resources/MinionResourceBase.gd" id="2_m51ia"]
 [ext_resource type="Texture2D" uid="uid://cja60ssombmhe" path="res://src/shadow.png" id="3_ocx6o"]
+[ext_resource type="Shader" path="res://paper.gdshader" id="4_eviq6"]
 [ext_resource type="Script" path="res://Entity/minion_shadow.gd" id="4_l13dj"]
 [ext_resource type="AudioStream" uid="uid://brwvdhjad2n6l" path="res://src/voice_lines/Damon Edwards-i_have_been_chosen_.wav" id="6_o6n3g"]
 
@@ -15,7 +15,13 @@ texture = ExtResource("1_bl3h3")
 health = 30
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i47sq"]
-shader = ExtResource("1_bsr0q")
+shader = ExtResource("4_eviq6")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
 
 [node name="Minion" type="Node2D"]
 script = ExtResource("1_djftq")

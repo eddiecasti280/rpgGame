@@ -27,6 +27,7 @@ func _physics_process(delta):
 		jester.flip_h = true
 	if Input.is_action_just_pressed("move_right"):\
 		jester.flip_h = false
+		
 
 
 func _on_interact_area_body_entered(body):

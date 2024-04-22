@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnbtut5dejsun"]
+[gd_scene load_steps=7 format=3 uid="uid://dnbtut5dejsun"]
 
 [ext_resource type="Shader" path="res://stage.gdshader" id="1_hc0sq"]
 [ext_resource type="Texture2D" uid="uid://rlk2xmloa80g" path="res://src/training_room.png" id="1_kh6l0"]
@@ -13,6 +13,11 @@ resource_local_to_scene = true
 shader = ExtResource("1_hc0sq")
 shader_parameter/distortionTexture = SubResource("NoiseTexture2D_noyf1")
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qijha"]
+friction = 0.0
+bounce = 1.0
+absorbent = true
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -21,9 +26,18 @@ scale = Vector2(2.8, 2.8)
 texture = ExtResource("1_kh6l0")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 8
-collision_mask = 8
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 build_mode = 1
 polygon = PackedVector2Array(-168, 80, 96, 80, 176, -40, 168, -40, -96, -40)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_qijha")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-179, 72)
+build_mode = 1
+polygon = PackedVector2Array(11, 8, 275, 8, 355, -112, 83, -112, 83, -200, 619, -200, 619, 88, -253, 88, -253, -200, 83, -200, 83, -112)

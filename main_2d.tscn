@@ -37,10 +37,11 @@ visible = false
 texture = SubResource("PlaceholderTexture2D_dcy6p")
 
 [node name="Control" parent="." instance=ExtResource("6_voqx0")]
-offset_left = 57.1428
-offset_top = -31.4286
-offset_right = 57.1428
-offset_bottom = -31.4286
+visible = false
+offset_left = -214.286
+offset_top = -134.286
+offset_right = -214.286
+offset_bottom = -134.286
 
 [node name="Duck" parent="." instance=ExtResource("7_vvgah")]
 position = Vector2(-48.2143, 33.5714)
