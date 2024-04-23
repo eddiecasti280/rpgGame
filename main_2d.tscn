@@ -16,7 +16,7 @@ scale = Vector2(2.8, 2.8)
 
 [node name="space" parent="." instance=ExtResource("1_6ydgj")]
 position = Vector2(14.2857, 8.57143)
-scale = Vector2(6, 6)
+scale = Vector2(10, 10)
 
 [node name="room" parent="." instance=ExtResource("4_j6pdy")]
 
@@ -47,5 +47,6 @@ position = Vector2(-71.4285, -5.71429)
 scale = Vector2(1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(2.8, 2.8)
 position_smoothing_speed = 10.0
 drag_vertical_enabled = true

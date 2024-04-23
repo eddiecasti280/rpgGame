@@ -8,3 +8,5 @@ run:
 
 clean:
 	godot --quit
+
+# check operating system & preload proper venv

@@ -8,6 +8,10 @@ uniform bool inside = false;
 uniform bool add_margins = true; // only useful when inside is false
 uniform vec2 number_of_images = vec2(1.0); // number of horizontal and vertical images in the sprite sheet
 
+void light(){
+	
+}
+
 // https://godotshaders.com/shader/2d-outline-inline-configured-for-sprite-sheets/ ###
 bool hasContraryNeighbour(vec2 uv, vec2 texture_pixel_size, vec2 image_top_left, vec2 image_bottom_right, sampler2D texture) {
 	for (float i = -ceil(width); i <= ceil(width); i++) {
