@@ -1,7 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnbtut5dejsun"]
+[gd_scene load_steps=11 format=3 uid="uid://dnbtut5dejsun"]
 
+[ext_resource type="Texture2D" uid="uid://if7q620sthk1" path="res://src/platform-Sheet.png" id="1_4yaki"]
 [ext_resource type="Shader" path="res://stage.gdshader" id="1_hc0sq"]
 [ext_resource type="Texture2D" uid="uid://rlk2xmloa80g" path="res://src/training_room.png" id="1_kh6l0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fn4x"]
+atlas = ExtResource("1_4yaki")
+region = Rect2(0, 0, 128, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bombc"]
+atlas = ExtResource("1_4yaki")
+region = Rect2(128, 0, 128, 86)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gmmd8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fn4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bombc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_olc4o"]
 
@@ -18,9 +41,17 @@ friction = 0.0
 bounce = 1.0
 absorbent = true
 
-[node name="Node2D" type="Node2D"]
+[node name="background" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 0)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_gmmd8")
+autoplay = "default"
+frame_progress = 0.78743
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_tweab")
 scale = Vector2(2.8, 2.8)
 texture = ExtResource("1_kh6l0")
@@ -38,6 +69,5 @@ polygon = PackedVector2Array(-168, 80, 96, 80, 176, -40, 168, -40, -96, -40)
 physics_material_override = SubResource("PhysicsMaterial_qijha")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(-179, 72)
 build_mode = 1
-polygon = PackedVector2Array(11, 8, 275, 8, 355, -112, 83, -112, 83, -200, 619, -200, 619, 88, -253, 88, -253, -200, 83, -200, 83, -112)
+polygon = PackedVector2Array(-40, -56, 56, -56, 152, -32, 200, -16, 216, 0, 224, 32, 200, 56, 152, 80, 80, 104, 32, 104, -40, 104, -96, 96, -128, 88, -192, 56, -208, 32, -208, 16, -184, -16, -136, -32, -88, -48, -48, -56, -48, -176, -544, -176, -544, 224, 552, 224, 552, -176, -48, -176, -48, -56)
