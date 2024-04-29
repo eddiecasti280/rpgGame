@@ -88,3 +88,9 @@ text = "Switch"
 position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_dbf2t")
 frame_progress = 0.885332
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 136.0
+offset_right = 488.0
+offset_bottom = 96.0

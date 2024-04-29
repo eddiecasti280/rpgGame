@@ -52,6 +52,10 @@ radius = 7.0
 
 [node name="Minion" type="CharacterBody2D"]
 script = ExtResource("1_ls8vu")
+speed = null
+health = null
+magic_attack = null
+attack = null
 
 [node name="minion_sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1lhju")

@@ -16,6 +16,8 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	
+	#print(global_position)
+	
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	# if direction input provided
@@ -38,12 +40,19 @@ func _physics_process(delta):
 func spawn_minions(count) -> void:
 	var names = ["Duck", "Smiley", "Mage"]
 	for value in range(count):
-		print(value)
+		#print(value)
 		var minion = ally.instantiate()
 		call_deferred("add_child", minion)
+		#get_parent().add_child(minion)
 		var iteration = str(value + 1)
 		var spawnName = "Minion" + iteration + "_Spawn"
+		
+		# print the position of the marker
+		print(str(get_node(spawnName).global_position))
+		
+		# set the position of the minion to the global position of the marker
 		minion.global_position = get_node(spawnName).global_position
+		
 		minion.init(names[value],(Constants.minions[names[0]]))
 		
 

@@ -132,13 +132,13 @@ priority = 1
 shape = SubResource("CircleShape2D_63hyx")
 
 [node name="Minion1_Spawn" type="Marker2D" parent="."]
-position = Vector2(-30.8571, 29.7143)
+position = Vector2(-18.2857, 19.4286)
 
 [node name="Minion2_Spawn" type="Marker2D" parent="."]
-position = Vector2(27.4286, 29.7143)
+position = Vector2(18.2857, 18.2857)
 
 [node name="Minion3_Spawn" type="Marker2D" parent="."]
-position = Vector2(0, -24)
+position = Vector2(0, -19.4286)
 
 [connection signal="body_entered" from="interact_area" to="." method="_on_interact_area_body_entered"]
 [connection signal="body_exited" from="interact_area" to="." method="_on_interact_area_body_exited"]

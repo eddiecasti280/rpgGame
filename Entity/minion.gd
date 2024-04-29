@@ -1,31 +1,65 @@
-extends Node2D
+extends CharacterBody2D
 
-@export var minion_res : Minion
+# local nodes
+@onready var minion_sprite = $minion_sprite
 @onready var audio_stream_player = $AudioStreamPlayer
 @onready var healthBar = $HealthBar
+@onready var timer = $Timer
+@onready var minion_name = "Duck"
+
+# external
+#@export var minion_res : Minion
+#@export var speed : int = Constants.minions.Duck.Speed
+@export var speed : int = 0
+@export var health : int = 0
+@export var magic_attack : int = 0
+@export var attack : int = 0
+
+var target_position: Vector2 = Vector2.ZERO
+
+func init(minion_type, minion):
+	# specify animation
+	minion_name = minion_type
+	#minion_sprite.Animation.frame = name
+	speed = minion.Speed
+	health = minion.Health
+	attack = minion.Attack
+	magic_attack = minion.MagicAttack
+	#minion_sprite.animation.set_animation(name)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# set with minion's max health
-	healthBar.max_value = minion_res.health
-	
-	hide()
-	await get_tree().create_timer(2).timeout
-	show()
-	await get_tree().create_timer(0.5).timeout
-	#minion_res.summoning_sound.play()
-	#audio_stream_player.play()
-	
-	# test health bar
-	await get_tree().create_timer(0.5).timeout
-	hurt(1)
-	
+	#pass # Replace with function body.
+	print(str(global_position))
+	#flip()
+	#print(Constants.minions.Duck.Health)
+	#print(global_position, target_position)
+	#print(name)
+	minion_sprite.animation = str(minion_name)
+	print(minion_sprite.animation)
+	#minion_sprite.animation.set_animation(name)
+	choose_pos()
+
+func choose_pos():
+	timer.wait_time = Constants.RNG.randi_range(1,4)
+	target_position = global_position + Vector2(Constants.RNG.randi_range(-100,100), Constants.RNG.randi_range(-100,100))
+	velocity = (target_position - global_position).normalized() * speed
+	if velocity.x >= 0:
+		minion_sprite.flip_h = false
+	else:
+		minion_sprite.flip_h = true
+
+func _physics_process(delta):
+	#print(name + " is at " + str(global_position))
+	set_velocity(velocity)
+	move_and_slide()
+
+func flip():
+	minion_sprite.rotation += PI/180
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	lerp(global_position, target_position, 0.1)
 
-# reduce the minion's health by amount "damage"
-func hurt(damage):
-	minion_res.health -= damage
-	healthBar.value = minion_res.health
+func _on_timer_timeout():
+	choose_pos()

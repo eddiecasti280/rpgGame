@@ -28,18 +28,16 @@ visible = false
 texture = SubResource("PlaceholderTexture2D_dcy6p")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_svuwa")]
-position = Vector2(-71.4285, -5.71429)
+position = Vector2(5.71428, 11.4286)
 scale = Vector2(1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-zoom = Vector2(2, 2)
 position_smoothing_speed = 10.0
 drag_vertical_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("6_voqx0")]
-visible = false
 offset_left = -0.000793457
 offset_top = 7.99921
 offset_right = -0.000732422
