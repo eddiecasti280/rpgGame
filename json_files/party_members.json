@@ -1,0 +1,20 @@
+{
+	"Duck": {
+		"Health": 32,
+		"Attack": 20,
+		"MagicAttack": 5,
+		"Speed": 100
+	},
+	"Smiley": {
+		"Health": 100,
+		"Attack": 4,
+		"MagicAttack": 90,
+		"Speed": 20
+	},	
+	"Mage": {
+		"Health": 10,
+		"Attack": 1,
+		"MagicAttack": 100,
+		"Speed": 25
+	}
+}

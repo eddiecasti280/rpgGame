@@ -1,0 +1,144 @@
+[gd_scene load_steps=21 format=3 uid="uid://cgvpxqbnx0fqy"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_r2aj1"]
+[ext_resource type="Texture2D" uid="uid://cja60ssombmhe" path="res://src/shadow.png" id="2_crkk5"]
+[ext_resource type="Texture2D" uid="uid://dt8uu6810rg4k" path="res://src/resized_jester.png" id="2_t4yam"]
+[ext_resource type="Script" path="res://shadow.gd" id="3_vdam5"]
+[ext_resource type="Shader" path="res://floating.gdshader" id="4_5cnc1"]
+[ext_resource type="Texture2D" uid="uid://c5q5vpunpp2wh" path="res://src/resized_jester-Sheet.png" id="6_mfkwk"]
+[ext_resource type="Texture2D" uid="uid://caoykfovctkxv" path="res://src/view-white-crumpled-paper.jpg" id="6_vylyy"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3o220"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cow1w"]
+resource_local_to_scene = true
+shader = ExtResource("4_5cnc1")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xqbdt"]
+shader = ExtResource("4_5cnc1")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqx81"]
+atlas = ExtResource("6_mfkwk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1r5nr"]
+atlas = ExtResource("6_mfkwk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ccbj"]
+atlas = ExtResource("6_mfkwk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lluda"]
+atlas = ExtResource("6_mfkwk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4wrc"]
+atlas = ExtResource("6_mfkwk")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnweu"]
+atlas = ExtResource("6_mfkwk")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5xmkm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqx81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1r5nr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ccbj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lluda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4wrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnweu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bumr7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtbbw"]
+size = Vector2(20, 29.5918)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_63hyx"]
+
+[node name="playable_char" type="CharacterBody2D"]
+scale = Vector2(7, 7)
+script = ExtResource("1_r2aj1")
+
+[node name="shadow" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_3o220")
+position = Vector2(0, 22.8571)
+scale = Vector2(2, 2)
+texture = ExtResource("2_crkk5")
+script = ExtResource("3_vdam5")
+
+[node name="jester" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_cow1w")
+texture = ExtResource("2_t4yam")
+metadata/_edit_group_ = true
+
+[node name="animated_jester" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_xqbdt")
+sprite_frames = SubResource("SpriteFrames_5xmkm")
+autoplay = "default"
+frame_progress = 0.431401
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("CanvasItemMaterial_bumr7")
+position = Vector2(6.85714, 4.57143)
+scale = Vector2(0.0790476, 0.0639999)
+texture = ExtResource("6_vylyy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.35714)
+scale = Vector2(0.7, 0.7)
+shape = SubResource("RectangleShape2D_jtbbw")
+one_way_collision = true
+
+[node name="interact_area" type="Area2D" parent="."]
+visible = false
+collision_layer = 2
+collision_mask = 2
+priority = 1
+
+[node name="interact_collision_shape" type="CollisionShape2D" parent="interact_area"]
+shape = SubResource("CircleShape2D_63hyx")
+
+[node name="Minion1_Spawn" type="Marker2D" parent="."]
+position = Vector2(-30.8571, 29.7143)
+
+[node name="Minion2_Spawn" type="Marker2D" parent="."]
+position = Vector2(27.4286, 29.7143)
+
+[node name="Minion3_Spawn" type="Marker2D" parent="."]
+position = Vector2(0, -24)
+
+[connection signal="body_entered" from="interact_area" to="." method="_on_interact_area_body_entered"]
+[connection signal="body_exited" from="interact_area" to="." method="_on_interact_area_body_exited"]

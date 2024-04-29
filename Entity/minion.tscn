@@ -40,6 +40,7 @@ script = ExtResource("4_l13dj")
 stream = ExtResource("6_o6n3g")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
+visible = false
 offset_left = -13.0
 offset_top = -17.0
 offset_right = 93.0

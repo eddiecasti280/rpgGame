@@ -105,7 +105,6 @@ metadata/_edit_group_ = true
 
 [node name="animated_jester" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_xqbdt")
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_5xmkm")
 autoplay = "default"
 frame_progress = 0.431401
@@ -131,6 +130,17 @@ priority = 1
 
 [node name="interact_collision_shape" type="CollisionShape2D" parent="interact_area"]
 shape = SubResource("CircleShape2D_63hyx")
+
+[node name="Minion1_Spawn" type="Marker2D" parent="."]
+position = Vector2(-30.8571, 29.7143)
+scale = Vector2(1, 1)
+
+[node name="Minion2_Spawn" type="Marker2D" parent="."]
+position = Vector2(27.4286, 29.7143)
+scale = Vector2(1, 1)
+
+[node name="Minion3_Spawn" type="Marker2D" parent="."]
+position = Vector2(0, -24)
 
 [connection signal="body_entered" from="interact_area" to="." method="_on_interact_area_body_entered"]
 [connection signal="body_exited" from="interact_area" to="." method="_on_interact_area_body_exited"]

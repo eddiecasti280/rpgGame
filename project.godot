@@ -15,10 +15,15 @@ run/main_scene="res://main_2d.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalHandler="*res://signal_handler.tscn"
+Constants="*res://constants.tscn"
+
 [display]
 
-window/size/viewport_width=2500
-window/size/viewport_height=2000
+window/size/viewport_width=1500
+window/size/viewport_height=1000
 
 [importer_defaults]
 
